@@ -1,2 +1,2 @@
-# FriendFinder
-An app that will take in results your users' surveys, then compare their answers with those from other users.
+# RestaurantReservation
+A demo app that uses node express to make reservations in a "restaurant"

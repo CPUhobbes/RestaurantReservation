@@ -65,40 +65,25 @@
         //Document on load
         $(document).ready(function(){
 
-            //Get response from tables and display it on page
-            $.ajax({
+            //Arrays of tables and waitlist with tag ID's
+            var listTypes = ["/api/tables", "/api/waitlist"];
+            var tagLoc = ["#tableSection", "#waitlistSection"];
+            
+            //Get response and display it on page
+            listTypes.forEach(function(location, listNum){
+                $.ajax({
                 type: "GET",
-                url: "/api/tables",
-            }).then(function(response){
-
-                var row = "<div class=\"row\"><div class=\"col-md-6\">";
-                var result="";
-                response.forEach(function(value, index){
-
-                    result += "<p class=\"tableText\"><button type=\"submit\" class=\"btn btn-primary submit\">"+(index+1)+"</button>"+" | "+value.name+" - "+value.ID+"</p>";
+                url: location,
+                }).then(function(response){
+                    var row = "<div class=\"row\"><div class=\"col-md-6\">";
+                    var result="";
+                    response.forEach(function(value, index){
+                        result += "<p class=\"tableText\"><button type=\"submit\" class=\"btn btn-primary submit\">"+(index+1)+"</button>"+" | "+value.name+" - "+value.ID+"</p>";
+                    });
+                    row+=(result+"</div></div>");
+                    $(tagLoc[listNum]).append(row);
                 });
-                row+=(result+"</div></div>");
-                $("#tableSection").append(row);
-
             });
-
-            //Get response from waitlist and display it on page
-            $.ajax({
-                type: "GET",
-                url: "/api/waitlist",
-            }).then(function(response){
-
-                var row = "<div class=\"row\"><div class=\"col-md-6\">";
-                var result="";
-                response.forEach(function(value, index){
-
-                    result += "<p class=\"tableText\"><button type=\"submit\" class=\"btn btn-primary submit\">"+(index+1)+"</button>"+" | "+value.name+" - "+value.ID+"</p>";
-                });
-                row+=(result+"</div></div>");
-                $("#waitlistSection").append(row);
-
-            });
-
         }) ;       
     </script>
 

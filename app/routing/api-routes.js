@@ -1,11 +1,10 @@
 module.exports = function(app) { 
 
 // Routes
-// =============================================================
 
-//People arrays
-var waitlist =[];
-var tables = [];
+	//People arrays
+	var waitlist =[];
+	var tables = [];
 
 	//Sends back arrays
 	app.get('/api/waitlist', function (req, res) {

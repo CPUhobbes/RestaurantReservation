@@ -19,8 +19,8 @@ module.exports = function(app) {
 	//If resevation is made put into correct arrays
 	app.post('/api/reserve', function (req, res) {
 		var newReserve = req.body;
+		newReserve.ID = uuid.v1(); //adds uuid to array, then adds to main arrays
 		if(tables.length<5){
-			newReserve.ID = uuid.v1(); //adds uuid to array, then adds to main arrays
 			tables.push(newReserve); 
 			res.send("You are Booked");
 

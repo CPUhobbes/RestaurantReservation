@@ -30,7 +30,7 @@ $("#reserveSubmit").on("click", function(e){
 		name: $('#name').val().trim(),
 		phone: $('#phone').val().trim(),
 		email: $('#email').val().trim(),
-		ID: $('#idNum').val().trim()
+		// ID: $('#idNum').val().trim()
 	}
 	$.ajax({
   		type: "POST",

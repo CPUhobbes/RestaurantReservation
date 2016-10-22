@@ -1,3 +1,5 @@
+var uuid = require('uuid');
+
 module.exports = function(app) { 
 
 // Routes
@@ -18,7 +20,8 @@ module.exports = function(app) {
 	app.post('/api/reserve', function (req, res) {
 		var newReserve = req.body;
 		if(tables.length<5){
-			tables.push(newReserve);
+			newReserve.ID = uuid.v1(); //adds uuid to array, then adds to main arrays
+			tables.push(newReserve); 
 			res.send("You are Booked");
 
 		}

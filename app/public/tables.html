@@ -78,7 +78,7 @@
                     var row = "<div class=\"row\"><div class=\"col-md-6\">";
                     var result="";
                     response.forEach(function(value, index){
-                        result += "<p class=\"tableText\"><button type=\"submit\" class=\"btn btn-primary submit\">"+(index+1)+"</button>"+" | "+value.name+" - "+value.ID+"</p>";
+                        result += "<p class=\"tableText\"><button type=\"submit\" class=\"btn btn-primary submit\">"+(index+1)+"</button>"+" | "+value.name+"&nbsp;&nbsp;<span class=\"smallText\">("+value.ID+")</span></p>";
                     });
                     row+=(result+"</div></div>");
                     $(tagLoc[listNum]).append(row);

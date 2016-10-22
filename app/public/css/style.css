@@ -1,0 +1,26 @@
+body{
+	color: #ffffff;
+}
+
+img{
+	padding: 5px;
+	border: 1px solid #cccccc;
+	margin-bottom: 10px;
+}
+
+.jumbotron{
+	background-color: #0073af;
+	position: relative;
+  	margin-top:40px;
+  	padding-top: 20px; 
+}
+
+.formText{
+	color: #000000;
+
+}
+.tableText{
+	color:#000000;
+	font-size: 32px;
+	font-weight: bold;
+}

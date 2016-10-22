@@ -75,7 +75,7 @@
                 type: "GET",
                 url: location,
                 }).then(function(response){
-                    var row = "<div class=\"row\"><div class=\"col-md-6\">";
+                    var row = "<div class=\"row\"><div class=\"col-md-12\">";
                     var result="";
                     response.forEach(function(value, index){
                         result += "<p class=\"tableText\"><button type=\"submit\" class=\"btn btn-primary submit\">"+(index+1)+"</button>"+" | "+value.name+"&nbsp;&nbsp;<span class=\"smallText\">("+value.ID+")</span></p>";
